@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Yeong's Adventure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheets/main.css">
+  <link rel="stylesheet" href="./assets/css/slick.css">
+  <link rel="stylesheet" href="./assets/css/animate.min.css">
+  <script src="./assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="./assets/js/jquery.simplyscroll.min.js"></script>
+  <script src="./assets/js/slick.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fredoka One', sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* 헤더 시작 */
+    header {
+      width: 100%;
+    }
+
+    #header {
+      z-index: 999;
+      width: 100%;
+      height: 100px;
+      top: 0;
+      justify-content:  space-between;
+      align-items: center;
+      padding: 0 50px 0 50px;
+      transition: All 0.2s ease;
+      -webkit-transition: All 0.2s ease;
+      -moz-transition: All 0.2s ease;
+      -o-transition: All 0.2s ease;
+      background: #0222B5;
+    }
+
+    .logo img {
+        width: 70px;
+        filter: invert(100%) sepia(6%) saturate(3565%) hue-rotate(220deg) brightness(118%) contrast(105%);
+    }
+
+    .nav {
+        font-size: 1.2em;
+    }
+
+    .nav .gnb {
+        gap: 65px;
+        color: white;
+        letter-spacing: 1px;
+    }
+
+    /* 헤더 끝 */
+
+    .hero {
+      position: relative;
+      background: #0222B5;
+      height: 770px;
+      color: orange;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .hero h1 {
+      position: absolute;
+      font-size: 100px;
+      top: 0%;
+      left: 30%;
+      z-index: 999;
+      text-shadow: #222 0 0 10px;
+    }
+
+    .hero p {
+      color: #fff;
+    }
+
+    .tapeBox {
+      position: absolute;
+      z-index: 999;
+    }
+
+    .tapeBox .tape {
+      width: 350px;
+      opacity: 0.6;
+    }
+
+    .tapeBox .tape.a {
+      transform: rotate(-40deg) translateY(-200px) translateX(150px);
+    }
+
+    .tapeBox .tape.b {
+      transform: rotate(-40deg) translateY(1010px) translateX(930px);
+    }
+
+    .visual-slider {
+      width: 90%;
+      height: 600px;
+      margin: 0 auto;
+      border: 3px solid black;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide .sticker {
+      position: absolute;
+      left: 50px;
+      bottom: -50px;
+      width: 150px;
+      z-index: 2;
+    }
+
+    .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .overlay-container .overlay-image {
+    position: absolute;
+    width: 200px; 
+    height: auto;
+  
+  }
+
+  /* 스티커 위치조정 (a) */
+  .overlay-container.a .overlay-image:nth-child(1) {
+    width: 230px; 
+    top: -60px;
+    right: 100px;
+  }
+
+  .overlay-container.a .overlay-image:nth-child(2) {
+    width: 120px; 
+    top: 60px;
+    right: 30px;
+  }
+
+  .overlay-container.a .overlay-image:nth-child(3) {
+    width: 240px; 
+    bottom: -100px;
+    left: -30px;
+  }
+
+  .overlay-container.a .overlay-image:nth-child(4) {
+    width: 60px; 
+    bottom: 130px;
+    left: 60px;
+  }
+
+  .overlay-container.a .overlay-image:nth-child(5) {
+    width: 100px; 
+    top: -50px;
+    left: 220px;
+    transform: rotate(20deg);
+  }
+
+  .overlay-container.a .overlay-image:nth-child(6) {
+    width: 100px; 
+    top: 300px;
+    right: -80px;
+    transform: rotate(95deg);
+  }
+
+  .overlay-container.a .overlay-image:nth-child(7) {
+    width: 100px; 
+    top: -100px;
+    right: 400px;
+    transform: rotate(40deg);
+  }
+
+  .overlay-container.a .overlay-image:nth-child(8) {
+    width: 150px; 
+    bottom: -40px;
+    right: 250px;
+    transform: rotate(30deg);
+  }
+
+  .overlay-container.a .overlay-image:nth-child(9) {
+    width: 200px; 
+    bottom: -70px;
+    left: 350px;;
+  }
+
+  /* 스티커 위치조정 (b) */
+  .overlay-container.b .overlay-image:nth-child(1) {
+    width: 150px; 
+    top: -40px;
+    right: 120px;
+  }
+
+  .overlay-container.b .overlay-image:nth-child(2) {
+    width: 230px; 
+    top: -45px;
+    right: -60px;
+  }
+
+  .overlay-container.b .overlay-image:nth-child(3) {
+    width: 240px; 
+    bottom: -100px;
+    left: -30px;
+  }
+
+  .overlay-container.b .overlay-image:nth-child(4) {
+    width: 100px; 
+    bottom: 150px;
+    left: -30px;
+  }
+
+  .overlay-container.b .overlay-image:nth-child(5) {
+    width: 120px; 
+    top: -50px;
+    left: 300px;
+  }
+
+  .overlay-container.b .overlay-image:nth-child(6) {
+    width: 100px; 
+    bottom: -50px;
+    right: 450px;
+  }
+
+  .overlay-container.b .overlay-image:nth-child(7) {
+    width: 100px; 
+    top: 250px;
+    right: -40px;
+  }
+
+  .overlay-container.b .overlay-image:nth-child(8) {
+    width: 300px; 
+    bottom: 60px;
+    right: 80px;
+    transform: rotate(20deg);
+  }
+
+  .overlay-container.b .overlay-image:nth-child(9) {
+    width: 200px; 
+    top: 50px;
+    left: 60px;
+  }
+
+   /* 스티커 위치조정 (c) */
+   .overlay-container.c .overlay-image:nth-child(1) {
+    width: 230px; 
+    top: -60px;
+    right: 100px;
+  }
+
+  .overlay-container.c .overlay-image:nth-child(2) {
+    width: 250px; 
+    top: 60px;
+    left: 30px;
+  }
+
+  .overlay-container.c .overlay-image:nth-child(3) {
+    width: 240px; 
+    bottom: -60px;
+    left: 80px;
+  }
+
+  .overlay-container.c .overlay-image:nth-child(4) {
+    width: 200px; 
+    bottom: 130px;
+    left: -100px;
+    transform: rotate(40deg);
+  }
+
+  .overlay-container.c .overlay-image:nth-child(5) {
+    width: 250px; 
+    bottom: 150px;
+    right: -150px;
+    transform: rotate(-30deg);
+  }
+
+  .overlay-container.c .overlay-image:nth-child(6) {
+    width: 100px; 
+    bottom: -40px;
+    left: 530px;
+  }
+
+  .overlay-container.c .overlay-image:nth-child(7) {
+    width: 140px; 
+    top: -80px;
+    left: 300px;
+  }
+
+  .overlay-container.c .overlay-image:nth-child(8) {
+    width: 150px; 
+    bottom: 280px;
+    right: 350px;
+  }
+
+  .overlay-container.c .overlay-image:nth-child(9) {
+    width: 300px; 
+    bottom: -50px;
+    right: 120px;;
+  }
+
+    /* 스티커 위치조정 (d) */
+    .overlay-container.d .overlay-image:nth-child(1) {
+    width: 100px; 
+    bottom: -80px;
+    right: 250px;
+    transform: rotate(40deg);
+  }
+
+  .overlay-container.d .overlay-image:nth-child(2) {
+    width: 130px; 
+    bottom: -70px;
+    left: -40px;
+    transform: rotate(-40deg);
+  }
+
+  .overlay-container.d .overlay-image:nth-child(3) {
+    width: 120px; 
+    top: -70px;
+    left: 220px;
+  }
+
+  .overlay-container.d .overlay-image:nth-child(4) {
+    width: 250px; 
+    top: -60px;
+    right: -70px;
+    transform: rotate(40deg);
+  }
+
+  .overlay-container.d .overlay-image:nth-child(5) {
+    width: 130px; 
+    top: -70px;
+    left: 400px;
+    transform: rotate(-30deg);
+  }
+
+  .overlay-container.d .overlay-image:nth-child(6) {
+    width: 130px; 
+    top: -40px;
+    right: 430px;
+  }
+
+  .overlay-container.d .overlay-image:nth-child(7) {
+    width: 200px; 
+    bottom: -60px;
+    left: 400px;
+    transform: rotate(-20deg);
+  }
+
+  .overlay-container.d .overlay-image:nth-child(8) {
+    width: 130px; 
+    bottom: 100px;
+    right: -60px;
+    transform: rotate(30deg);
+  }
+
+  .overlay-container.d .overlay-image:nth-child(9) {
+    width: 100px; 
+    bottom: 250px;
+    left: -80px;
+    transform: rotate(-85deg);
+  }
+
+  /* 갤러리시작 */
+    .gallery {
+    width: 100%;
+    padding: 100px 0 50px 0;
+    }
+
+    .simply-scroll-container{
+      position: relative; 
+      margin-bottom: 40px; 
+      width: 100%;
+    }
+
+    .simply-scroll-clip {
+      position: relative; 
+      overflow: hidden;
+    }
+
+    .simply-scroll-list {
+      display: flex; 
+      flex-wrap: wrap;
+    }
+
+    .simply-scroll-list li {
+      width: 310px; 
+      margin: 0 20px; 
+      border-radius: 30px; 
+      overflow: hidden; 
+      position: relative;
+    }
+
+
+    .simply-scroll-list li img {
+      width: 100%;
+    }
+
+    .simply-scroll-list li .imgTxt {
+      width: 200px; 
+      position: absolute; 
+      opacity: 1; 
+      left: 10%; 
+      bottom: 10%;
+    }
+
+    .simply-scroll-list li .layer {
+      position: absolute; 
+      left: 0; 
+      top: 0; 
+      background: #2511ff; 
+      width: 100%; 
+      height: 100%; 
+      padding: 30px; 
+      box-sizing: border-box; 
+      color: #fff; 
+      opacity: 0;
+    }
+
+    .simply-scroll-list li .layer .tit {
+      font-weight: bold; 
+      margin-bottom: 15px;
+    }
+
+    .simply-scroll-list li .layer .txt {
+      font-size: 14px; 
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.781); 
+      line-height: 1.782;
+    }
+
+    .simply-scroll-list li .layer .img {
+      width: 200px; 
+      margin-top: 113px;
+    }
+
+    .simply-scroll-list li:hover .layer {
+      opacity: 1;
+    }
+
+    .simply-scroll-list li:hover .imgTxt {
+      opacity: 0;
+    }
+
+    .gallery li {
+      height: 300px;
+      border-radius: 40px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4 / 5; /* 이미지 비율 고정 */
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit :scale-down;
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+      border-radius: 40px;
+      
+    }
+
+    .gallery li:hover img {
+      transform: scale(1.2);
+    }
+
+
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      margin: auto;
+      display: block;
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .modal .prev, .modal .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: white;
+      background: none;
+      border: none;
+      padding: 0 20px;
+    }
+
+    .modal .prev { left: 10px; }
+    .modal .next { right: 10px; }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="header" class="inner row">
+        <div class="logo row">
+            <a href="index.html">
+                <!-- 로고 이미지색 변경 -->
+                <img src="./assets/img/index/logo.svg" alt="로고">
+            </a>
+        </div>
+        <div class="nav row">
+          <ul class="gnb row en">
+            <li><a href="/gallrery.html">WORKS</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/process.html">PROCESS</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+        </ul>
+        </div>
+    </div>
+</header>
+  <div class="hero">
+    <h1>YEONG'S <br>ADVENTURE</h1>
+    <div class="tapeBox">
+      <img src="./assets/img/gallery/tape.svg" alt="" class="tape a">
+      <img src="./assets/img/gallery/tape.svg" alt="" class="tape b">
+    </div>
+    <div class="visual-slider">
+      <div class="slide active" style="background-image: url('./assets/img/gallery/artwork_visual_01.png');">
+      <div class="overlay-container a">
+        <img src="./assets/img/gallery/sticker_cat.svg" class="overlay-image" alt="">
+        <img src="./assets/img/gallery/sticker_hamster.svg" class="overlay-image" alt="">
+        <img src="./assets/img/gallery/sticker_photo.svg" class="overlay-image" alt="">
+        <img src="./assets/img/gallery/sticker_pin.svg" class="overlay-image" alt="">
+        <img src="./assets/img/gallery/sticker_bug_01.svg" class="overlay-image" alt="">
+        <img src="./assets/img/gallery/sticker_bug_02.svg" class="overlay-image" alt="">
+        <img src="./assets/img/gallery/sticker_leaf_01.svg" class="overlay-image" alt="">
+        <img src="./assets/img/gallery/sticker_leaf_02.svg" class="overlay-image" alt="">
+        <img src="./assets/img/gallery/sticker_leaf_03.svg" class="overlay-image" alt="">
+      </div>
+      </div>
+      <div class="slide" style="background-image: url('./assets/img/gallery/artwork_visual_02.png');">
+        <div class="overlay-container b">
+          <img src="./assets/img/gallery/sticker_sunflower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_sunflower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_sunflower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_flower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_flower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_flower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_flower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_map.svg" class="overlay-image" alt="">
+        </div>
+      </div>
+      <!-- <div class="slide" style="background-image: url('./assets/img/gallery/artwork_visual_03.png');">
+        
+      </div> -->
+      <div class="slide" style="background-image: url('./assets/img/gallery/artwork_visual_04.png');">
+        <div class="overlay-container c">
+          <img src="./assets/img/gallery/sticker_jellyfish.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_fish.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_coral.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_jellyfish.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_coral.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_uni.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_bubble.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_bubble.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_boat.svg" class="overlay-image" alt="">
+        </div>
+      </div>
+      <!-- <div class="slide" style="background-image: url('./assets/img/gallery/artwork_visual_05.png');">
+        
+      </div> -->
+      <div class="slide" style="background-image: url('./assets/img/gallery/artwork_visual_06.png');">
+        <div class="overlay-container d">
+          <img src="./assets/img/gallery/sticker_leaf_01.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_leaf_02.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_leaf_03.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_sunflower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_flower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_flower.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_mushroom_01.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_mushroom_02.svg" class="overlay-image" alt="">
+          <img src="./assets/img/gallery/sticker_bug_02.svg" class="overlay-image" alt="">
+        </div>
+      </div>
+    </div>
+    <p>BY. SON HWAYEON (YONA)</p>
+  </div>
+
+  <!-- 갤러리 이미지 -->
+  <div class="gallery">
+    <ul id="scroller">
+      <li>
+        <img src="./assets/img/gallery/art_02.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_16.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_01.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_12.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_03.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_14.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_04.png" alt="" data-index="0">
+      </li>
+   </ul>
+    <ul id="scroller2">
+      <li>
+        <img src="./assets/img/gallery/art_05.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_10.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_06.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_13.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_07.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_11.png" alt="" data-index="0">
+      </li>
+      <li>
+        <img src="./assets/img/gallery/art_08.png" alt="" data-index="0">
+      </li><li>
+        <img src="./assets/img/gallery/art_09.png" alt="" data-index="0">
+      </li>
+    </ul>
+    </div>
+    
+    <!-- 모달 구조 -->
+    <div id="modal" class="modal hidden">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  <footer>
+    ⓒ 2025 SON HWAYEON. All rights reserved.
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 3000); // 3초마다 슬라이드 전환
+
+    //스크롤배너
+    $(function(){
+        $("#scroller").simplyScroll();
+        $("#scroller2").simplyScroll({direction:'backwards'});
+    });
+
+    //모달
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const galleryImages = document.querySelectorAll(".gallery img");
+
+    let currentIndex = 0;
+    const imageSources = Array.from(galleryImages).map(img => img.src);
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        currentIndex = index;
+        showModal(currentIndex);
+      });
+    });
+
+    function showModal(index) {
+      modal.classList.remove("hidden");
+      modal.style.display = "flex";
+      modalImg.src = imageSources[index];
+    }
+
+    function changeSlide(step) {
+      currentIndex = (currentIndex + step + imageSources.length) % imageSources.length;
+      modalImg.src = imageSources[currentIndex];
+    }
+
+    prevBtn.onclick = () => changeSlide(-1);
+    nextBtn.onclick = () => changeSlide(1);
+    closeBtn.onclick = () => { modal.style.display = "none"; };
+    window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+    window.onkeydown = e => {
+      if (e.key === "Escape") modal.style.display = "none";
+      else if (e.key === "ArrowRight") changeSlide(1);
+      else if (e.key === "ArrowLeft") changeSlide(-1);
+    };
+  </script>
+
+</body>
+</html>

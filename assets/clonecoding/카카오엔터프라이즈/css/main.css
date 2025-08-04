@@ -1,0 +1,253 @@
+body {font-family: 'SpoqaHanSansNeo-Regular'}
+.wrap {width: 100%; overflow: hidden; height: 6700px;}
+header {width: 100%; height: 80px; position: fixed; z-index: 100;}
+.innerHeader {width: 90%; margin: 0 auto; display: flex; justify-content: space-between; line-height: 5; font-weight: bold; font-size: 16px; color: #fff;}
+.innerHeader .logo {position: relative; height: 80px;}
+.innerHeader .logo .logo_b {position: absolute; top: 22px; left: 0; opacity: 0;}
+.innerHeader .logo img {width: 165px;}
+.innerHeader .gnb {width: 40%; display: flex; justify-content: space-between;}
+.innerHeader:hover .gnb li {transition: all 0.4s; color: rgb(148, 148, 148);}
+.innerHeader .tnb {position: relative;}
+.innerHeader .tnb i { font-size: 13px; color: rgb(175, 175, 175); margin-left: 16px; transform: rotate(0.13turn);}
+.innerHeader .tnb .headDot {position: absolute; width: 22px; height: 22px; background: #eee; border-radius: 50%; right: -8px; top: 30px; z-index: -1;}
+
+/* 헤더 호버효과 */
+.innerHeader:hover .logo_b {display: block; z-index: 100; opacity: 1;}
+.innerHeader:after {content: ''; width: 1920px; height: 80px; background: #fff; position: absolute; left: 0; top: 0; opacity: 0; transition: all 0.3s; z-index: -1;}
+.innerHeader:hover:after {opacity: 1;}
+.innerHeader .gnb li a:hover {transition: all 0.4s; color: #000;}
+.innerHeader:hover .tnb {color: #000;}
+.innerHeader .tnb a:hover i {color: #000; transition: all 0.2s;}
+.innerHeader .tnb:hover .headDot {background: #ffe100; transition: all 0.2s;}
+
+/*헤더 on클래스 */
+header.on {background: #fff; height: 80px; transition: all 0.5s;}
+header.on .gnb {color: #000;}
+header.on .tnb {color: #000;}
+header.on .innerHeader .logo_w {opacity: 0; transition: all 0.5s;}
+header.on .innerHeader .logo_b{opacity: 1; transition: all 0.5s;}
+
+
+/* section.visual */
+section.visual {width: 100%; overflow: hidden; position: relative; margin-bottom: 150px;}
+section.visual .list {display:block; width:100%; height:1000px; background-repeat:no-repeat; background-size:cover; background-position:center;}
+section.visual .list .txt {position: absolute; top:40%; left: 8%;}
+section.visual .slide li h2 {font-size: 60px; color: #fff; margin-bottom: 24px;}
+section.visual .slide li a {display: inline-block; padding: 14px 70px; border: 3px solid #fff; border-radius: 50px; color: #fff;font-size: 17px; font-weight: bold; }
+section.visual .slide li a:hover {color: #000; border: 3px solid #ffe100; background: #ffe100; transition: all 0.2s;}
+
+/* slick arrow */
+.slick-arrow {position: absolute; width: 10px; height: 4px; left: 55%; bottom: 10%; transform: rotate(45deg);border: none; text-indent: -9999px; cursor: pointer; background: #fff;}
+.slick-arrow::before {content: ''; width: 13px; height: 4px; left: 55%; top: 120%; transform: rotate(90deg); position: absolute; cursor: pointer; background: #fff;} 
+.slick-prev {left: 45%; bottom: 9%; z-index: 99; transform:rotate(-135deg);}
+
+
+/* section.news */
+section.news {width: 100%;}
+section.news .inner {width: 65%; overflow: hidden; margin: 0 auto; margin-bottom: 20px;} 
+section.news .inner .connect {position: relative; display: block; width: 50%;}
+section.news .inner .connect img {display: inline-block; margin-bottom: 31px;}
+section.news .inner .connect .ai {position: absolute;top: 9.5rem; left: 14rem;}
+section.news .inner ul li:last-child {border-bottom: none;}
+section.news .inner .left {width: 45%; float: left;}
+section.news .inner .right {width: 45%; float: left; margin-left: 10%;}
+section.news .inner .right li:nth-child(1) {padding: 0 0 80px;}
+section.news .inner li {width: 100%;padding: 80px 0; border-bottom: 1px solid rgb(241, 241, 241); overflow: hidden;}
+section.news .inner li .txt {font-size: 15px; color: rgb(90, 90, 90); margin-bottom: 10px;}
+section.news .inner li .txt a {position: relative;}
+section.news .inner li .txt img {width: 29px; margin-left: 7px;}
+section.news .inner li .tit {width: 96%; font-size: 21px; font-weight: 600; margin-bottom: 20px; line-height: 1.6;}
+section.news .inner li .img {width: 100%; border-radius: 20px; box-sizing: border-box; overflow: hidden;}
+section.news .inner li .img img {width: 100%;}
+
+
+
+section.news .more {font-size: 16px; font-weight: 600; margin: 0 auto; letter-spacing: -1px; text-align: center;}
+section.news .more i {position: relative; margin-left: 45px; color: #eee; margin-bottom: 200px;}
+section.news .more i span {position: absolute; width: 45px; height: 45px; background: rgb(0, 0, 0); top: 50%; left: 50%; transform: translate(-50%,-50%); border-radius: 50%; z-index: -1;}
+section.news .more a:hover i {color: black; transition: all 0.2s;}
+section.news .more a:hover span {background: #ffe100;transition: all 0.2s;}
+
+
+
+section.news .inner li .txt:hover {color: rgb(255, 187, 0); transition: all 0.2s;}
+section.news .inner li .txt a:after {content: ''; width: 0; height: 1px; background: rgb(255, 187, 0); position: absolute; left:0; bottom:-5%; transition: all 0.4s; transform: scaleX(1); opacity: 0}
+section.news .inner li .txt:hover a:after {width: 100%; opacity: 1;}
+section.news .inner li .tit:hover a {border-bottom: 1px solid #000;}
+
+/* section.service */
+section.service {width: 100%; margin-bottom: 250px;}
+section.service h2 {width: 65%; font-size: 50px; margin: 0 auto; margin-bottom: 80px;}
+
+.simply-scroll-container{position: relative; margin-bottom: 40px; width: 100%;}
+.simply-scroll-clip {position: relative; overflow: hidden;}
+.simply-scroll-list {display: flex; flex-wrap: wrap;}
+.simply-scroll-list li {width: 310px; margin: 0 20px; border-radius: 30px; overflow: hidden; position: relative;}
+.simply-scroll-list li img {width: 100%;}
+.simply-scroll-list li .imgTxt {width: 200px; position: absolute; opacity: 1; left: 10%; bottom: 10%;}
+.simply-scroll-list li .layer {position: absolute; left: 0; top: 0; background: #2511ff; width: 100%; height: 100%; padding: 30px; box-sizing: border-box; color: #fff; opacity: 0;}
+.simply-scroll-list li .layer .tit {font-weight: bold; margin-bottom: 15px;}
+.simply-scroll-list li .layer .txt {font-size: 14px; font-weight: bold; color: rgba(255, 255, 255, 0.781); line-height: 1.782;}
+.simply-scroll-list li .layer .img {width: 200px; margin-top: 113px;}
+.simply-scroll-list li:hover .layer {opacity: 1;}
+.simply-scroll-list li:hover .imgTxt {opacity: 0;}
+
+
+/* section.partner */
+section.partner {width: 100%; position: relative; margin-bottom: 200px;}
+section.partner .img {display: block; margin: 0 auto; background-repeat:no-repeat; background-size:cover; background-position:center; width: 85%; height: 380px; border-radius: 20px;}
+section.partner .txt {position: absolute; top: 36%; left: 17%; font-size: 37px; font-family: 'SpoqaHanSansNeo-Regular';; font-weight: 700; color: #fff;}
+section.partner .view a {position: absolute; top: 44%; right: 16%; font-size: 16px; font-weight: 700; background: #fff; padding: 17px 65px; border-radius: 50px; box-sizing: border-box;}
+section.partner .view a:hover {content: ''; background: #ffe100; transition: 0.2s;}
+
+/* section.business */
+section.business {width: 100%; margin-bottom: 180px;}
+section.business .inner {width: 65%; margin: 0 auto; position: relative;}
+section.business .inner h2 {font-size: 50px; margin: 0 auto; margin-bottom: 80px;}
+section.business .inner ul {display: flex; justify-content: space-between;}
+section.business .inner ul .tit {margin-bottom: 16px; font-weight: 700; color: rgb(255, 174, 0)}
+section.business .inner ul .txt {font-size: 20px; font-weight: 700; margin-bottom: 30px;}
+section.business .inner ul .more {position: relative; font-size: 15px; color: rgb(122, 122, 122);}
+section.business .inner ul .more:hover {color: #000; transition: all 0.2s;}
+section.business .inner ul .more:hover span {background:  #ffe100;}
+section.business .inner ul .more i {font-size:18px; font-weight: bold; margin-left: 10px;}
+section.business .inner ul li:last-child .more i {font-size: 13px; font-weight: normal;transform: rotate(0.13turn);margin-left: 14px;}
+section.business span.dot {position: absolute; width: 22px; height: 22px; background: #eee; border-radius: 50%; left: 0; bottom: -1px; z-index: -1;}
+section.business span.dot1 {left:7.4rem;}
+section.business span.dot2 {left:6.5rem;}
+section.business span.dot3 {left:7.7rem; bottom: -2px}
+
+/* section.inquiry */
+section.inquiry {width: 100%; position: relative;}
+section.inquiry .img {display: block; margin: 0 auto; background-repeat:no-repeat; background-size:cover; background-position:center; width: 100%; height: 380px;}
+section.inquiry .txt {position: absolute; top: 36%; left: 17%; font-size: 37px; font-family: 'SpoqaHanSansNeo-Regular';; font-weight: 700; color: rgb(0, 0, 0);}
+section.inquiry .view a {position: absolute; top: 44%; right: 16%; font-size: 16px; font-weight: 700; background: rgb(15, 15, 15); color: #fff; padding: 17px 80px; border-radius: 50px; box-sizing: border-box;}
+section.inquiry .view a:hover {content: ''; background: #242424; transition: 0.2s;}
+
+/* footer */
+footer {width: 100%; position: relative;}
+footer .inner {width: 80%; margin: 0 auto; padding: 40px 0; box-sizing: border-box; overflow: hidden;}
+.menu {float: right;}
+.menu ul {float: left;}
+.menu ul li {float: left; font-size: 18px; font-weight: bold; margin-right: 30px; color: rgb(126, 126, 126);}
+.menu ul li:hover {color: #000; transition: all 0.4s;}
+.menu ul li:nth-child(2) {color: #000;}
+.menu ul li span {margin-right: 8px; font-size: 14px;}
+.menu .plus {float: left; font-size: 15px; padding: 5px 15px; display: block; background: rgb(243, 243, 243); border-radius: 50px; box-sizing: border-box;color: rgb(126, 126, 126);}
+.menu .plus:hover {color: #000; transition: all 0.4s;}
+.menu .plus span {font-size: 13px; font-weight: bold; margin-right: 40px;}
+.sns {width: 16%; position: absolute; bottom: -14%; left: 10%;}
+.sns ul li img {width: 28px;margin-right: 10px;}
+footer .inner .enter  {width: 15%; font-size: 15px; font-weight: bold; color: #242424;}
+
+/* 반응형 */
+/* 태블릿 */
+@media screen and (max-width: 1023px) {
+    .wrap {height: 5440px;}
+    .gnb {display: none;}
+    .tnb {display: none;}
+    .innerHeader {width: 100%;}
+    .innerHeader:hover .logo_b {opacity: 0;}
+    .innerHeader:after {display: none;}
+    .innerHeader .logo {padding: 0 0 0 39px;}
+    .innerHeader .logo .logo_b {left: 39px;}
+    .button .a {position: absolute; display: block; width: 35px; height: 2px; background: #fff; float: left; right: 5%; top: 38%;}
+    .button .b {position: absolute; display: block; width: 35px; height: 2px; background: #fff; float: left; right: 5%; top: 50%;}
+    .button .c {position: absolute; display: block; width: 35px; height: 2px; background: #fff; float: left; right: 5%; top: 63%;}
+    header.on {border-bottom: 1px solid rgb(218, 218, 218);}
+    header.on .button .a, header.on .button .b,header.on .button .c {background: #000;}
+
+    section.visual {height: 60vh}
+    section.visual .list {height: 580px;}
+    section.visual .slide li h2 {width: 90%; font-size: 43px; left: 50%; top: 43%; line-height: 1.3;}
+    section.visual .slide li a {left: 16%; font-size: 16px; border: 2px solid #fff; padding: 11px 50px; bottom: 29%;}
+    section.news .inner {width: 85%;}
+    .simply-scroll-container {margin-bottom: 22px;}
+    section.news .inner .title img {height: 40px;}
+    section.news .inner .ai {top: 8.5%; left: 72%;}
+    section.news .inner .ai img {width: 100px;}
+    section.news .inner li {padding: 70px 0;}
+    section.news .inner li .txt {font-size: 15px;}
+    section.news .inner li .tit {font-size: 20px;}
+    section.news .more {width: 20%;}
+    section.news .more i {margin-bottom: 150px;}
+    section.service {margin-bottom: 150px;}
+    section.service h2 {width: 80%; font-size: 42px; margin-bottom: 50px;}
+    .simply-scroll-list li {width: 260px; margin: 0px 15px;}
+    .simply-scroll-list li .layer .tit {font-size: 13px; margin-bottom: 10px;}
+    .simply-scroll-list li .layer .txt {font-size: 13px;}
+    .simply-scroll-list li .layer .img {margin-top: 82px;}
+    section.partner {width: 100%; margin-bottom: 150px;}
+    section.partner .img {width: 100%; height: 300px;}
+    section.partner .inner {width: 90%; margin: 0 auto;  border-radius: 20px;   overflow: hidden;}
+    section.partner .txt {width: 79%; text-align: center; font-size: 30px; left: 11%; top: 30%;}
+    section.partner .txt span {display: none;}
+    section.partner .view a {font-size: 15px; padding: 14px 50px;  top: 53%; right: 38%;}
+    section.business {margin-bottom: 100px;}
+    section.business .inner {width: 80%;}
+    section.business .inner ul {flex-wrap: wrap;}
+    section.business .inner ul li {width: 45%;}
+    section.business .inner h2 {font-size: 42px; margin-bottom: 50px;}
+    section.business .inner ul .tit {font-size: 18px;}
+    section.business .inner ul .txt {font-size: 20px; line-height: 1.5;}
+    section.business .inner ul .txt span {display: none;}
+    section.business .inner ul .more {margin-bottom: 50px;}
+    section.business .inner .dot3 {right: 217px;}
+    section.inquiry .txt {font-size: 32px; left: 50%; transform: translate(-50%); text-align: center;top: 22%;}
+    section.inquiry .view a {font-size: 14px; padding: 15px 60px; top: 60%; right: 40%;}
+    section.inquiry .img {height: 300px;}
+    footer .inner {width: 90%;}
+    footer .inner .menu {width: 100%; float: left; margin-bottom: 100px;}
+    footer .inner .menu .plus {float: right;}
+    footer .inner .sns {width: 30%; left: 5%; bottom: 46%;}
+    footer .inner .enter {width: 30%; font-size: 14px;}
+}
+
+/* 태블릿(세로) */
+@media screen and (max-width: 639px) {
+    header {height: 100px;}
+    header.on {height: 100px;}
+    .innerHeader {width: 90%;}
+    .innerHeader .logo {padding: 0;}
+    .innerHeader .logo img {width: 200px;}
+    .innerHeader .logo .logo_w {height: 100px;}
+    .innerHeader .logo .logo_b {left: 0; top: 34%;}
+    .innerHeader .gnb {margin-right: 39px;}
+    .innerHeader:after {width: 200px; height: 100px;}
+    .button .a {position: absolute; display: block; width: 30px; height: 2px; background: #fff; float: left; right: 5%; top: 40%;}
+    .button .b {position: absolute; display: block; width: 30px; height: 2px; background: #fff; float: left; right: 5%; top: 50%;}
+    .button .c {position: absolute; display: block; width: 30px; height: 2px; background: #fff; float: left; right: 5%; top: 60%;}
+    section.visual {height: 70vh;}
+    section.visual .list {height: 700px;}
+    section.visual .slide li h2 {width: 85%; font-size: 40px; top: 42%;}
+    section.visual .slide li h2 span {display: none;}
+    section.visual .slide li a {font-size: 20px; padding: 15px 46px; top: none; left: none; transform: none;}
+}
+
+/* 모바일 */
+@media screen and (max-width:480px) {
+    .wrap {height: 100%;}
+    .innerHeader .gnb {display: none;}
+    .innerHeader .logo img {width: 100px;}
+    .innerHeader .logo .logo_b {width: 100px; top: 40%;}
+    section.visual {height: 100vh;}
+    section.news .inner .left {width: 100%; float: none;}
+    section.news .inner .right {width: 100%; float: none; margin-left: 0;}
+    section.news .more {width: 100%;}
+    section.partner .inner {width: 100%; border-radius: 0px;}
+    section.partner .img {border-radius: 0;}
+    section.partner .txt {font-size: 25px;}
+    section.partner .view a {top: 60%;right: 30%;}
+    section.business .inner ul {display: contents;}
+    section.business .inner ul li {width: 100%;}
+    section.inquiry .txt {font-size: 32px;left: 10%;transform: translate(0);text-align: center;}
+    section.inquiry .view a {right: 32%;}
+    footer .inner .menu {margin-bottom: 0;}
+    footer .menu ul {width: 100%;}
+    footer .menu ul li {display: block; float: none; margin-bottom: 25px;}
+    footer .menu ul li:last-child {margin-bottom: 50px;}
+    footer .menu ul li span {font-size: 18px;}
+    footer .inner .menu .plus {float: left; margin-bottom: 50px;}
+    footer .inner .sns {position:static; width: 100%; margin-bottom: 50px;}
+    footer .inner .enter {width: 100%;}
+}

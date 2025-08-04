@@ -1,0 +1,265 @@
+body {
+    background-color: #fdf6f8;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.detail_info {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.imgBox {
+    height: 400px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.imgBox img {
+    width: 100%;
+}
+
+.titleBox strong {
+    display: block;
+    font-size: 14px;
+    color: #ff7b9c;
+    margin-bottom: 10px;
+}
+
+.titleBox h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.tool {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tool li {
+    background: #ffe3e3;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #d64571;
+    font-weight: bold;
+}
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+  }
+  
+  .section-divider::before,
+  .section-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #ffe3e3;
+  }
+  
+  .section-label {
+    background-color: #ffe3e3;
+    color: #d64571; 
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px; /* pill shape */
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+.features li {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+}
+
+.features li:first-child p {
+    text-align: left;
+    margin-bottom: 18px;
+    margin-left: 30px;
+}
+
+.features li:nth-child(2) p {
+    text-align: right;
+    margin-right: 30px;
+    margin-bottom: 18px;
+}
+
+.features li p {
+    font-size: 13px;
+    width: 27%;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+video {
+    width: 450px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+.page_open {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.page_open li {
+    background: #ff94b6;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+.page_open li:hover {
+    background: #ff5f91;
+}
+
+.imgPullpage img {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+/* Layout */
+.slider-wrap {
+    margin: 0 auto; 
+    position: relative;
+}
+
+/* 슬라이더 */
+.swiper-slide {
+    width: 100%; 
+    overflow: hidden; 
+    position: relative; 
+    background-color: #000;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+/* 메인슬라이더 효과 */
+.slider img {
+    transform: translateY(-20px); 
+    transition: all 0.5s; 
+    opacity: 0;
+}
+.slider .swiper-slide-active img {
+    transform: translateY(0); 
+    opacity: 1;
+}
+
+/* 랩탑이미지 */
+.slider-wrap .laptop {
+    width: 43.1%; 
+    position: absolute; 
+    left: 50%; 
+    top: 45%; 
+    transform: translateX(-50%); 
+    z-index: 1;
+    pointer-events: none; /* 클릭 이벤트 차단 */
+}
+.slider-wrap .laptop img {
+    width: 100%;
+}
+
+/* 랩탑목업에 썸네일 슬라이드 위치 */
+.slider-wrap .slider-thumbnail {
+    height: 79%; 
+    width: 35%; 
+    position: absolute; 
+    left: 50%; 
+    top: 45%; 
+    border-radius: 5%; 
+    transform: translateX(-50%);
+}
+
+/* 텍스트 */
+.slider-wrap .slider-thumbnail .textBox {
+    color: #fff; 
+    position: absolute; 
+    font-size: 25px; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%,-50%); 
+    opacity: 0; 
+    transition: all 0.5s; 
+    text-align: center;
+    text-shadow: 2px 2px 2px #8e8e8e
+}
+
+
+.slider-wrap .slider-thumbnail .swiper-slide-active .textBox {
+    opacity: 1; 
+    top: 50%;
+}
+
+.swiper-slide .textBox span {
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+
+/* 버튼 */
+.swiper-button-next, .swiper-button-prev {
+    z-index: 20; 
+    display: block; 
+    width: 50px; 
+    height: 30px; 
+    background: url(img/btn.png) no-repeat center/50px; top: 85%; cursor: pointer;
+}
+
+.swiper-button-next {
+    right: 25%; 
+    transform: rotate(360deg);
+}
+
+.swiper-button-prev {
+    left: 25%;
+}

@@ -1,0 +1,155 @@
+/* 헤더 시작 */
+header {
+  width: 100%;
+}
+
+#header {
+  width: 100%;
+  height: 100px;
+  top: 0;
+  position: fixed;
+  justify-content:  space-between;
+  align-items: center;
+  padding: 0 67px 0 50px;
+  transition: All 0.2s ease;
+  -webkit-transition: All 0.2s ease;
+  -moz-transition: All 0.2s ease;
+  -o-transition: All 0.2s ease;
+}
+
+
+.logo img {
+  width: 70px;
+  filter: invert(100%) sepia(6%) saturate(3565%) hue-rotate(220deg) brightness(118%) contrast(105%);
+}
+
+.nav {
+  font-size: 1.2em;
+}
+
+.nav .gnb {
+  gap: 65px;
+  color: white;
+  letter-spacing: 1px;
+}
+/* 헤더 끝 */
+  /* 푸터 시작 */
+  footer {
+    width: 100%;
+    height: 100vh;
+    background: var(--color-black);
+    color: white;
+    padding: 200px 0;
+  }
+
+  .footer_wrap {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer_wrap span {
+    display: block;
+    color: #444444;
+    font-size: 1.8em;
+    margin-bottom: 150px;
+  }
+
+  .footer_wrap h2 {
+    font-size: 5em;
+    margin-bottom: 100px;
+  }
+
+  .footer_wrap p {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+
+  .copyright {
+    padding: 200px 0 0 0;
+    margin: 0 auto;
+    text-align: center;
+    color: #444444;
+  }
+  /* 푸터 끝 */
+
+
+/* 반응형  */
+
+/*1500px*/
+@media screen and (max-width:1500px){
+  footer {
+    padding: 200px 0 20px 0;
+  }
+
+  .footer_wrap {
+    width: 90%;
+  }
+
+  .footer_wrap span {
+    margin-bottom: 100px;
+  }
+
+  .copyright {
+    padding: 250px 0 0 0;
+  }
+}
+
+@media screen and (max-width:1024px){
+    footer {
+    padding: 200px 0 20px 0;
+    }
+
+
+    .footer_wrap {
+    width: 80%;
+    }
+
+    .footer_wrap span {
+    font-size: 1.5em;
+    margin-bottom: 80px;
+    }
+
+    .footer_wrap h2  {
+      font-size: 3em;
+    }
+
+    .footer_wrap p {
+    font-size: 1.3em;
+    }
+
+    .copyright {
+    padding: 230px 0 0 0;
+    }
+  }
+  
+  /*550*/
+  @media screen and (max-width:700px){
+  footer {
+  padding: 200px 0 20px 0;
+  }
+
+
+  .footer_wrap {
+  width: 80%;
+  }
+
+  .footer_wrap span {
+  font-size: 1em;
+  margin-bottom: 150px;
+  }
+
+  .footer_wrap h2  {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+
+  .footer_wrap p {
+  font-size: 1em;
+  }
+
+  .copyright {
+    font-size: 0.7em;
+  padding: 260px 0 0 0;
+  }
+   }

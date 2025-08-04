@@ -1,0 +1,15 @@
+/* 공통애니메이션 */
+@keyframes textAni {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translate3d(0,10px,0) skewY(8deg); transform-origin: top left;}
+  }
+  @keyframes titleDecoAni{
+    0% {opacity: 0; transform: translateY(-30px);}
+    50% {opacity: 1; transform: translateY(0);}
+  }
+  
+  .h1.motion {animation-name: textAni; animation-duration: 1s;}
+  .h2.motion {animation-name: textAni; animation-duration: 1.2s;}
+  .title.motion, .tit.motion {animation-name: titleDecoAni; animation-duration: 1s;}
+  .text.motion, .txt.motion, .li.motion {animation-name: textAni; animation-duration: 1.4s;}
+  .button.motion {animation-name: textAni; animation-duration: 1.4s;}

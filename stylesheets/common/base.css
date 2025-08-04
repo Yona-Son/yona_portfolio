@@ -1,0 +1,62 @@
+
+/* 기본 글자 크기 및 웹폰트  */
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+body {
+    box-sizing: border-box;
+    font-family: "pretendard-light";
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: "pretendard";
+    src: url(/assets/fonts/Pretendard-Medium.otf);
+  }
+
+@font-face {
+  font-family: "pretendard-bold";
+  src: url(/assets/fonts/Pretendard-Bold.otf);
+}
+
+@font-face {
+  font-family: "pretendard-light";
+  src: url(/assets/fonts/Pretendard-Light.otf);
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url(/assets/fonts/HelveticaNeueLight.ttf);
+  }
+
+  @font-face {
+    font-family: "HelveticaNeue-bold";
+    src: url(/assets/fonts/HelveticaNeueBold.ttf);
+  }
+
+  @font-face {
+    font-family: "Pacifico";
+    src: url(/assets/fonts/Pacifico-Regular.ttf);
+  }
+  
+
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.en {
+    font-family: "HelveticaNeue";
+}
+
+.en-bold {
+    font-family: "HelveticaNeue-bold";
+}
+
+.en-pa {
+  font-family: "Pacifico";
+}
