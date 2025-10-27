@@ -309,7 +309,11 @@
     </div>
 
     <!--js -->
-    <script>        
+    <script>
+    window.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+    });
+    
   // GSAP 및 ScrollTrigger 활성화
     gsap.registerPlugin(ScrollTrigger);
 
